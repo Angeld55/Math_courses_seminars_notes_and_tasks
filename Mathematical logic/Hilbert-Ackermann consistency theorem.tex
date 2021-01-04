@@ -1,0 +1,203 @@
+% !TXS template
+\documentclass[french]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[bulgarian]{babel}
+\usepackage{amsmath}
+\usepackage{cancel}
+% Title Page
+
+
+\title{Теорема на Хилберт-Акерман}
+\author{Ангел Димитриев}
+\date{}
+
+
+\begin{document}
+\maketitle
+\author
+
+\subsection*{Дефиниция. Хеникова система.}
+Една формална систма е \textbf{хеникова}, ако за всяка затворена формула $\exists x A$ на системата, съществува затворен терм $t$, такъв че $\exists x A \implies A_x[t]$ е теорема на системата. \newline\newline
+\textbf{Забележка.} А изразява свойство на x. Системата трябва да е \textit{готова с пример, в случай че свойството е изпълнено в нея}. Но това \textbf{НЕ} означава, че тя \textit{дава примера преди да сме доказали, че свойството е вярно.} 
+\subsection*{Дефиниция. Специални константи. Специални аксиоми}
+Нека $F$ е формална система. Ако $\exists x A$ е затворена формула от симовлите на $F$ (и специалните константи на $F$), то символът $K_{\exists x A}$ е \textbf{специална константа} на $F$ за формулата $\exists x A$. \newline
+Ако $K_{\exists x A}$ е специална константа, то формулата: 
+\begin{align}
+\exists x A \implies A_x[K_{\exists x A}]
+\end{align}
+наричаме $\textbf{специална аксиома}$ за $K_{\exists x A}$.\newline\newline
+Ако $F'$ е получен от $F$, добавяйки всички специални константи, то от $\textbf{теоремата за константите}$ следва, че $F'$ е консервативни разшиерение на $F$. А ако $SA$ е множеството на всички специални аксиоми, то $F'[SA]$ е \textbf{хенкинова формална система}.
+
+\subsection*{Твърдение 1:} Ако $\vdash_F$ $T$, то всеки затворен частен случай на $T$ от $L_c(F)$ е тавтологично следствие на затворени частни случаи в $L_c(F)$ на аксиомите и специалните аксиоми на $F$. 
+\subsection*{Доказателство:} 
+Нека $\vdash_F$ $T$ и нека $T'$ е затворен частен случай на $T$. \newline Ще покажем, че $T'$ е тавтологично следствие на затворени частни случаи на аксиомите и специалните аксиоми. Ще направим индукция по дължината на извода в $F$.
+\begin{itemize}
+	\item[1.] 1 случай:
+\end{itemize}
+
+\begin{itemize}
+\item Нека $T$ е аксиома.
+\end{itemize}
+ то $T'$ е затворен частен случай на аксиома на $F$. \newline \textbf{Но всеки терм е тавтологично следствие на себе си} (в частност $T'$ на $T'$), от където следва, че $T'$ е тавтологично следствие на затворени частни случай на аксиомите на $F$ (в частност аксиомата $T$).
+ \begin{itemize}
+\item Нека $T$ е тавтологично следствие на $T_1, T_2 ... T_n$:
+\end{itemize}
+Тогава $T'$ се получава чрез замяна на свободните промени с термове в $T$. Прилагаме същите замени в $T_1, T_2 ... T_n$ и получаваме  $T'_1, T'_2 ... T'_n$. Тогава $T'_1, T'_2 ... T'_n$ са затворени частни случаи на теоремите $T_1, T_2 ... T_n$. \newline \textbf{Oт и.п.} $T'_1, T'_2 ... T'_n$ са тавтологични следствия на затворени частни случаи на аксиомите и специалните аксиоми. Но $T'$ e тавтологично следствие на $T'_1, T'_2 ... T'_n$. A  $T'$ е тавтологично следствие на това, на което $T'_1, T'_2 ... T'_n$ са тавтологични следствия. \newline Следователно $T'$ е тавтологично следствие на затворени частни случаи на аксиомите и специалните аксиоми. 
+
+\begin{itemize}
+	\item[2.] Нека $T$ се получава от $A \implies B$ чрез (П $\exists$).
+\end{itemize}	 
+	Тогава: $T' = \exists x A' \implies B'$, където $A'$ е частен случай на $A$, а $B'$ е \textbf{затворен} частен случай на B.\newline
+	Възможно е А' да \textbf{не е затворена}. Ако в $A$ променливата $x$ е участвала \textbf{свободно}, то в $T'$ тя вече е свързана и \textbf{не можем да я заменим} в $A'$. \newline
+	Тогава за да получим \textbf{затворен} частен случай на  $\exists x A' \implies B'$ \textbf{трябва да заменим свободните срещания на } $x$ (които са в $A'$) с терм. \newline
+	Нека $C_{\exists x A'}$ е \textbf{специалната константа} на $\exists x A'$. \newline
+	Тогава $A'_{x}[C_{\exists x A'}] \implies B'$ \textbf{е затворен частен случай на} $A \implies B$.
+	От \textbf{и.п.} формулата $A'_{x}[C_{\exists x A'}] \implies B'$ е тавтологично следствие на аксиомите на $F$ и специалните аксиоми на $F$. \newline
+	Специалната аксиома за $C_{\exists x A'}$ е $\exists x A' \implies 
+	A'_{x}[C_{\exists x A'}] $.
+	Имаме, че: 
+	\begin{itemize}
+		\item[a)]  $\exists x A' \implies A'_{x}[C_{\exists x A'}]$ е специална аксиома.
+		\item[б)] $A'_{x}[C_{\exists x A'}] \implies B'$  е тавтологично следствие на аксиомите и специалните аксиоми на $F$
+		
+	\end{itemize}
+\textbf{От а), б) и транзитивността на импликацията} следва, че: \newline
+ $T' = \exists x A' \implies B'$ е тавтологично следствие на затворени частни случаи в $L_c(F)$ на аксиомите и специалните аксиоми на $F$.
+
+\subsection*{Теорема на Хилеберт-Акерман:}
+Нека $F$ е формална система, имаща само \textbf{безкванторни нелогически аксиоми}. Тогава $F$ е противоречива тогава и само тогава, когато някоя дизюнкция от отрицания на частни случаи на нелогическите аксиоми на $F$ е тавтологично следствие на частни случаи на аксиомите за равенството.
+\subsection*{Доказателство:}
+$\impliedby$ ) Нека някоя дизюнкция от отрицания на частни случаи на нелогически аксиоми на $F$ е тавтологично следствие на частни случай на аксиомите за равенството.Т.е. : 
+\begin{align}
+\neg A_1 \lor \neg A_2 \lor \dots \lor \neg A_n
+\end{align}
+е тавтологично следствие на частни случаи на аксиомите за равенството и $A_i (1 <= i <= n)$ е частен случай на аксиомите на $F$.
+Но тогава:
+\begin{align}
+ \vdash_F \neg A_1 \lor \neg A_2 \lor \dots \lor \neg A_n
+\end{align}
+но $A_i$ е частен случай на аксиома и съгласно \textbf{теоремата за замяната}: 
+\begin{align}
+\vdash_F  A_1, \vdash_F A_2,  \dots \vdash_F  A_n
+\end{align}
+Горната формула може да запишем така:
+\begin{align}
+ A_1 \implies A_2 \implies A_3 \implies \dots \implies A_{n-2} \implies A_{n-1} \implies \neg A_n.
+\end{align}
+Но по \textbf{modus ponens}:  
+\begin{align}
+ \cancel{A_1} \implies A_2 \implies A_3 \implies \dots \implies A_{n-2} \implies A_{n-1} \implies \neg A_n 
+\end{align} 
+\begin{align*}
+  \cancel{A_1} \implies \cancel{A_2} \implies A_3 \implies \dots \implies A_{n-2} \implies A_{n-1} \implies \neg A_n 
+\end{align*}
+\begin{align*}
+\cancel{A_1} \implies \cancel{A_2} \implies \cancel{A_3} \implies \dots \implies A_{n-2} \implies A_{n-1} \implies \neg A_n 
+\end{align*}
+\begin{align*}
+\vdots
+\end{align*}
+\begin{align*}
+\cancel{A_1} \implies \cancel{A_2} \implies \cancel{A_3} \implies \dots \implies \cancel{A_{n-2}} \implies \cancel{A_{n-1}} \implies \neg A_n 
+\end{align*}
+Следователно $\neg A_n$ \textbf{е теорема} на $F$. Но и $A_n$ е \textbf{теорема} на $F$. \newline От тук следва, че $F$ е \textbf{противоречива}. \newline \newline
+$\implies )$ Нека $F$ е противоречива (и $F$  има само безкванторни нелогически аксиоми). Тогава $\vdash_F x \neq x $. Но от твърдение 1, следва, че $c \neq c$ ($c$ е произволна константа от $L_c(F)$) е \textbf{тавтологично следствие} на затворени в $L_c(F)$ частни случай на аксиомите и специалните аксиоми на $F$. \newline
+Т.е от затворени частни случай на аксиомите и специалните аксиоми на $F$, използвайки само \textbf{теорема за тавтологиите}, може да докажем, че $c \neq c$.
+Следователно имаме нещо от типа:
+\begin{align*}
+A_1 \implies A_2 \implies A_3 \implies \dots \implies A_n \implies c \neq c
+\end{align*}
+което е тавтология. $A_i (1<= i <= n)$ е частен случай на аксиомите и специалните аксиоми на $F$.
+Ще трябва да се освободим от \textbf{аксиомите за субституция и специалните аксиоми}.
+Така ще получим тавтология, която е дизюнкция от отрицания на затворени частни случаи в $L_c(F)$ на аксиоми за равенството и нелогически аксиоми на $F$.
+Имаме следната тавтология:
+\begin{align*}
+\neg A_1 \lor \neg A_2 \lor \neg A_3 \dots \lor \neg A_n
+\end{align*}
+$A_i (1<= i <= n)$
+\begin{itemize} 
+	\item Затворена аксиома за субституцията.
+	\item Затворен частен случай на аксиома за равенството.
+	\item Затворен частен случай на аксиома на $F$.
+\end{itemize}
+Но $F$ е отворена формална система - \textbf{нелогическите аксиоми нямат квантори}. В аксиомите за равенството също \textbf{няма квантори}.
+Тогава може да разпознаем дали $A_i$ е аксиома за субституцията/специална аксиома по това \textbf{дали съдържа квантор}. \newline
+Нека $\exists x A'$ е формулата с възможно най-много квантори от тавтологията.
+Тогава $\exists x A'$ е парче от: 
+\begin{itemize} 
+	\item $A'_x[a] \implies \exists x A'$ (част от аксиома за субституцията).
+	\item $\exists x A' \implies A'_x[C_{\exists x A'}]$ (част от специална аксиома)
+\end{itemize}
+Тогава имаме следната тавология:
+\begin{align*}
+\neg (\exists x A' \implies A'_x[C_{\exists x A'}]) \lor 	\neg (A'_x[a_1] \implies \exists x A') \lor \dots 	\lor \neg(A'_x[a_m] \implies \exists x A')  \lor 
+\end{align*}
+\begin{align*}
+\lor \neg A_1 \lor \neg A_2 \lor \neg A_3 \dots \lor \neg A_s
+\end{align*}
+където $\exists x A'$ не участва в $A_1, \dots, A_s$. 
+\newline
+\textbf{Забележка:} Ако някой дизюнкт не участва във формулата \newline (например: $A'_x[a] \implies \exists x A'$ ), то понеже нашата дизюнкция е тавтология, можем да го добавим. \newline
+Искаме да премахнем $\exists x A'$. След краен брой прилагания на тази процедура(която сега ще приложим), ще премахнем всички квантори от тавтологията. \newline \newline
+\textbf{Заместваме} $\exists x A'$ с  $A'_x[C_{\exists x A'}])$
+\begin{align*}
+\neg ( A'_x[C_{\exists x A'}] \implies A'_x[C_{\exists x A'}]) \lor 	\neg (A'_x[a_1] \implies A'_x[C_{\exists x A'}]) \lor \dots 	\lor \neg(A'_x[a_m] \implies A'_x[C_{\exists x A'}])  \lor 
+\end{align*}
+\begin{align*}
+\lor \neg A_1 \lor \neg A_2 \lor \neg A_3 \dots \lor \neg A_s
+\end{align*}
+Но $A'_x[C_{\exists x A'}] \implies A'_x[C_{\exists x A'}]$ е аксиома, т.е целият дизюнкт можем да го премахнем. Така получаваме тавтологията:
+\begin{align*}\neg (A'_x[a_1] \implies A'_x[C_{\exists x A'}]) \lor \dots 	\lor \neg(A'_x[a_m] \implies A'_x[C_{\exists x A'}])  \lor 
+\end{align*}
+\begin{align*}
+\lor \neg A_1 \lor \neg A_2 \lor \neg A_3 \dots \lor \neg A_s
+\end{align*}
+За всеки израз $t$ с $t^i$ да означим израза, който се получава след заместване на $C_{\exists x A'}$ с $a_i$. \textbf{Заместваме и в индексите на специалните константи}. \newline
+При тази замяна, \textbf{спциалната константа се превръща в специална константа}, а \textbf{специалните аксиоми в специални аксиоми}. \newline
+Получаваме m тавтологии.
+\begin{align*}
+\neg (A'_x[a_1^1] \implies A'_x[a_1]) \lor \dots 	\lor \neg(A'_x[a_m^1] \implies A'_x[a_1])  \lor \neg A_1^1 \lor  \dots \lor  \neg A_s^1
+\end{align*}
+\begin{align*}
+\neg (A'_x[a_1^2] \implies A'_x[a_2]) \lor \dots 	\lor \neg(A'_x[a_m^2] \implies A'_x[a_2])  \lor \neg A_1^2 \lor \dots \lor \neg A_s^2
+\end{align*}
+\begin{align*}
+\vdots
+\end{align*}
+\begin{align*}
+\neg (A'_x[a_1^m] \implies A'_x[a_m]) \lor \dots 	\lor \neg(A'_x[a_m^m] \implies A'_x[a_m])  \lor \neg A_1^m \lor  \dots \lor  \neg A_s^m
+\end{align*}
+Ако в i-тата тавтология $a_i$ е истина, то първите m дизюнкта ще са лъжа. От тук получаваме, че:
+
+\begin{align*}
+ A'_x[a_1] \implies \neg A_1^1 \lor  \dots \lor  \neg A_s^1
+\end{align*}
+\begin{align*}
+A'_x[a_2] \implies \neg A_1^2 \lor  \dots \lor  \neg A_s^2
+\end{align*}
+\begin{align*}
+\vdots
+\end{align*}
+\begin{align*}
+A'_x[a_m] \implies \neg A_1^m \lor  \dots \lor  \neg A_s^m
+\end{align*}
+От $(*)$  за да бъде истина дизюнкта $\neg (A'_x[a_1] \implies A'_x[C_{\exists x A'}]) (1<=i<=m)$, то трябва $A'_x[a_1]$ да е истина. Следователно получаваме:
+
+\begin{align*}
+\neg (A'_x[a_1] \implies A'_x[C_{\exists x A'}]) \implies A'_x[a_1]
+\end{align*}
+\begin{align*}
+\neg (A'_x[a_2] \implies A'_x[C_{\exists x A'}]) \implies A'_x[a_2]
+\end{align*}
+\begin{align*}
+\vdots
+\end{align*}
+\begin{align*}
+\neg (A'_x[a_m] \implies A'_x[C_{\exists x A'}]) \implies A'_x[a_m]
+\end{align*}
+Следователно следната формула е тавтология:
+\begin{align*}
+\neg A_1^1 \lor \dots \lor \neg A_s^1 \lor \dots \dots.  \lor \neg A_1^m \lor \dots \lor \neg A_s^m \lor \neg A_1 \lor \dots \neg A_m.
+\end{align*}
+\end{document}
