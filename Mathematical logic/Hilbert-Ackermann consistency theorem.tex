@@ -118,6 +118,7 @@ A_1 \implies A_2 \implies A_3 \implies \dots \implies A_n \implies c \neq c
 $A_i (1<= i <= n)$
 \begin{itemize} 
 	\item Затворена аксиома за субституцията.
+	\item Специална аксиома.
 	\item Затворен частен случай на аксиома за равенството.
 	\item Затворен частен случай на аксиома на $F$.
 \end{itemize}
@@ -200,4 +201,10 @@ A'_x[a_m] \implies \neg A_1^m \lor  \dots \lor  \neg A_s^m
 \begin{align*}
 \neg A_1^1 \lor \dots \lor \neg A_s^1 \lor \dots \dots.  \lor \neg A_1^m \lor \dots \lor \neg A_s^m \lor \neg A_1 \lor \dots \neg A_m.
 \end{align*}
+Всеки дизюнкт е частен случай или на аксиомите за равенството, или на нелогическите аксиоми за $F$. Нека с $\alpha_i$ бележим i-тият дизюнкт, който е частен случай на аксиома за равеснтвото, а с $\beta_i$ i-тият дизюнкт, който е частен случай на нелогическите аксиоми на $F$. (броим от ляво надясно)). 
+Тогава следното е тавтология (след преподреждане):
+\begin{align*}
+\alpha_1 \implies \alpha_2 \implies \dots \implies \alpha_k  \implies (\neg \beta_1 \lor \dots \lor \neg \beta_r) 
+\end{align*}
+Получихме, че дизюнкцията от отрицания на частни случай на нелогическите аксиоми на $F$ $(\neg \beta_1 \lor \dots \lor \neg \beta_r)$ е тавтологично следствие на частни случай на аксиомите за равенството ($\alpha_1 \dots \alpha_k$).
 \end{document}
