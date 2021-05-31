@@ -1,0 +1,2 @@
+##  Нормална форма на чомски. CYK алгоритъм.
+https://www.youtube.com/watch?v=vQL8m4pqxYY
