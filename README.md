@@ -2,7 +2,7 @@
 
 
 #  Дискретни структури 
- - [Записки от семинари (зимен семестър 2021/2022).](https://github.com/Angeld55/Math_courses_seminars_notes_and_tasks/tree/master/Discrete%20mathematics/Seminars_Notes)
+ - [Опростен вариант на записките семинари (зимен семестър 2021/2022).](https://github.com/Angeld55/Math_courses_seminars_notes_and_tasks/tree/master/Discrete%20mathematics/Seminars_Notes)
 
  - [Изпити и контролни + **решения**.](https://github.com/Angeld55/Math_courses_seminars_notes_and_tasks/tree/master/Discrete%20mathematics/Exams)
  
